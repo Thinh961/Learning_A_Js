@@ -1,0 +1,18 @@
+<div class="" style="margin-top: 30px;">
+  <h1 class="name-form">Add Remove Dynamic Form</h1>
+  <div class="form-dynamic">
+    <p class="title-form">Add programming skill details</p>
+    <form class="main-form" formArrayName="skillArrayForm">
+      <div>
+        <label class="control-label" for="">Enter Progammer Name</label>
+        <input class="form-control" type="text" formControlName="progammerName">
+      </div>
+      <button class="add-btn" (click)="add()">Add more skill</button>
+      <div>
+        <label class="control-label" for="">Select progamming skill</label>
+        <input class="form-option" type="text" formControlName="progammingSkill">
+        <button class="remove-btn">Remove</button>
+      </div>
+    </form>
+  </div>
+</div>
