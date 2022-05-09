@@ -75,3 +75,14 @@ h1.name-form {
     padding-left: 25px;
     padding-bottom: 25px;
 }
+
+.submit-btn {
+    margin-top: 10px;
+    height: 35px;
+    background-color: #30ee4fef;
+    border-radius: 5px;
+    border: 1px solid;
+    color: #fff;
+    width: 13%;
+    display: block;
+}

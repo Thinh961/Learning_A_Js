@@ -2,17 +2,21 @@
   <h1 class="name-form">Add Remove Dynamic Form</h1>
   <div class="form-dynamic">
     <p class="title-form">Add programming skill details</p>
-    <form class="main-form" formArrayName="skillArrayForm">
+    <form class="main-form" [formGroup]="myForm" (ngSubmit)="send(myForm.value)">
       <div>
         <label class="control-label" for="">Enter Progammer Name</label>
-        <input class="form-control" type="text" formControlName="progammerName">
+        <input class="form-control" type="text" formControlName="name">
       </div>
-      <button class="add-btn" (click)="add()">Add more skill</button>
-      <div>
-        <label class="control-label" for="">Select progamming skill</label>
-        <input class="form-option" type="text" formControlName="progammingSkill">
-        <button class="remove-btn">Remove</button>
+      <button class="add-btn" (click)="addSkill()">Add more skill</button>
+      <div *ngFor="let skill of getSkillsFormControls(); let i = index">
+        <label class="control-label" for="">Select progamming skill {{ i }}</label>
+        <input class="form-option" type="text" [formControl]="skill">
+        <button class="remove-btn" *ngIf="i != 0" (click)="removeSkill(i)">Remove</button>
       </div>
+      <button class="submit-btn" type="submit">Submit</button>
     </form>
   </div>
+
+  {{myForm.value.name | json}}
+
 </div>
